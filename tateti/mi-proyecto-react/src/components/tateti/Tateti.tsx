@@ -3,11 +3,12 @@ import "./tateti.css";
 import { useTatetiLogica } from "./tatetiLogica";
 
 const Tateti = () => {
-  const { cantClicks, ganador, resultados, acciones } = useTatetiLogica();
+  const { cantClicks, contenido, ganador, resultados, acciones } = useTatetiLogica();
 
   return (
     <>
       <h1>{cantClicks}</h1>
+      <h2>Turno: {contenido}</h2>
 
       <div className="tateti">
         {resultados.map((value, index) => (
