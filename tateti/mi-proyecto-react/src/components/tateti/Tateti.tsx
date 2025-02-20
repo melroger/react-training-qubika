@@ -1,14 +1,15 @@
 import Cuadrado from "../cuadrado/Cuadrado";
+import InfoTitle from "../infoTitle/infoTitle";
 import "./tateti.css";
 import { useTatetiLogica } from "./tatetiLogica";
 
 const Tateti = () => {
-  const { cantClicks, contenido, ganador, resultados, acciones } = useTatetiLogica();
+  const { cantClicks, contenido, ganador, resultados, acciones, resetearVariables } = useTatetiLogica();
 
   return (
     <>
-      <h1>{cantClicks}</h1>
-      <h2>Turno: {contenido}</h2>
+      <InfoTitle contenido={cantClicks}></InfoTitle>
+      <InfoTitle contenido={contenido}></InfoTitle>
 
       <div className="tateti">
         {resultados.map((value, index) => (
@@ -16,7 +17,8 @@ const Tateti = () => {
         ))}
       </div>
 
-      <h2>{ganador}</h2>
+      <InfoTitle contenido={ganador}></InfoTitle>
+      <button onClick={() => resetearVariables()}>Reiniciar</button>
     </>
   );
 };

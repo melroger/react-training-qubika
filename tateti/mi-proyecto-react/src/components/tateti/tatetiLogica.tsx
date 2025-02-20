@@ -65,5 +65,5 @@ export function useTatetiLogica() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resultados]);
 
-  return { cantClicks, contenido, ganador, resultados, acciones };
+  return { cantClicks, contenido, ganador, resultados, acciones, resetearVariables };
 }
